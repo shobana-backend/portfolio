@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #f7f7f5;
+  --color-background-secondary: #f1f2f0;
+  --color-surface: #ffffff;
+  --color-ink: #1f2328;
+  --color-ink-soft: #3d444d;
+  --color-muted: #59616b;
+  --color-border: #e4e4e1;
+  --color-border-strong: #d8d9d6;
+  --color-grid-line: #dadbd8;
+  --color-blur-tone: #e9eae7;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+  --animate-fade-up: fade-up 0.55s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-background);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-8;
+  }
+
+  .technical-grid {
+    background-image:
+      linear-gradient(to right, rgba(218, 219, 216, 0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(218, 219, 216, 0.25) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
