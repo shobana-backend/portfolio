@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Download, Menu, X } from 'lucide-react'
 
-import { navigation, profile, resume } from '../../data/profile'
+import { navigation, resume } from '../../data/profile'
 import { useScrolled } from '../../hooks/useScrolled'
 import Button from '../ui/Button'
 
@@ -23,9 +23,7 @@ export default function Header() {
           className="font-mono text-lg font-medium tracking-tight text-ink"
           onClick={() => setMenuOpen(false)}
         >
-          {profile.name.charAt(0)}
-          <span className="text-muted">.</span>
-          <span className="text-muted">{profile.name.split(' ')[1]?.toLowerCase()}</span>
+          Shobana
         </a>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">

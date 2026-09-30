@@ -28,7 +28,10 @@ export default function Hero() {
       <div className="container-page relative">
         <div className="animate-fade-up flex flex-col items-start gap-8">
           <div className="flex flex-col gap-4">
-            <p className="font-mono text-sm text-muted">{profile.name} — {profile.role}</p>
+           <div className="inline-flex w-fit items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-base font-mono font-medium text-white shadow-sm">
+  <span className="text-neutral-400">---</span>
+  <span className="text-emerald-400">{profile.role}</span>
+</div>
             <h1 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
               Backend Developer focused on Go, APIs, and scalable systems.
             </h1>
